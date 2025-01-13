@@ -1,0 +1,10 @@
+@use 'partials/mixins';
+@use 'partials/variables';
+@use 'partials/base';
+@use 'partials/animations';
+
+@use 'components/nav';
+@use 'components/footer';
+@use 'components/contact';
+// @use '../node_modules/@sweetalert2/theme-dark/dark';
+
