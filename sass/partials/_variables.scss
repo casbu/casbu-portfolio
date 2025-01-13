@@ -1,0 +1,46 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&family=Homemade+Apple&family=Roboto:wght@100&display=swap');
+@font-face {
+    font-family: 'casbu';
+    src: url(/assets/fonts/Casbu-Regular.ttf);
+}
+
+//WIDTHS
+$width-small: 375px;
+$width-medium: 800px;
+$width-large: 1600px;
+
+//FONTS
+$font-text: 'Jost', sans-serif;
+$font-header: 'casbu', sans-serif;
+$signature: 'Homemade Apple', cursive;
+$font-size: 20px;
+
+
+//COLORS
+//main titles, text, social icons
+$primary_white: #eeedeb;
+$primary_dark: rgb(29, 30, 41);
+$primary_black: #121212; //201f1f
+
+//lite links
+$primary_blue: #6464E5; // 609828
+
+//labels
+$primary_label: #2ee26b;
+
+//cta
+$primary_cta: #E66567;
+
+//nav
+$nav_bg: rgb(9, 9, 9);
+$nav_hover: rgb(33, 32, 32);
+
+//overlay
+$overlay_shadow: #ffffff95;
+
+//ANIMATION
+$spacing: 0.1rem;
+$transition: all 0.3s linear;
+$transition_slow: all 0.5s linear;

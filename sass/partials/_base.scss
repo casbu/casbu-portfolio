@@ -1,0 +1,324 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:root {
+  font-size: $font-size;
+  font-family: $font-text;
+
+  @include respond(desktop) {
+    font-size: 2rem;
+  }
+}
+
+// ==================== DEBUG 
+
+// section, footer {
+//   border: 2px dotted blue;
+// }
+// div{
+//   border: 2px dotted lightgreen;
+// }
+// ul {
+//   border: 2px dotted red;
+// }
+// a {
+//   border: 2px dotted hotpink;
+// }
+
+
+body {
+  color: $primary_white;
+  background-color: $primary_black;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+  width: 0.35rem;
+}
+body::-webkit-scrollbar-track{
+  background: $primary_dark;
+}
+body::-webkit-scrollbar-thumb{
+  background: $primary_label;
+}
+
+// ==================== CONTENT 
+
+main {
+  margin-bottom: 0vh;
+}
+
+section {
+  // height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+
+  @include respond(laptop) {
+    width: 90vw;
+    margin-left: 10vw;
+  }
+}
+
+section.hero, section.about {
+  height: 100vh;
+}
+
+section.work {
+  top: 23%;
+}
+
+section.hero div:first-child, 
+section.about div:first-child, 
+section.skills div:first-child{
+  position: relative;
+  top: 23%;
+}
+
+section.about div:first-child {
+  @include respond(laptop){
+    top: 15%;
+  }
+}
+
+section.work div:first-child {
+  @include respond(laptop){
+    top: 10%;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-text;
+}
+
+h1 {
+  font-size: 5em;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+p {
+  font-weight: 100;
+}
+
+a{
+  font-weight: 300;
+  color: $primary_blue;
+}
+
+// --------------- Hero Section ---------------
+
+.banner {
+  padding: 3rem;
+  text-align: center;
+}
+
+.banner-title {
+  height: transformY(-50%);
+}
+
+.banner-title h1 {
+  font-weight: 100;
+  color: $primary_white;
+}
+
+.about-title {
+  position: absolute;
+  padding: 2rem;
+
+  @include respond(tab-port) {
+    padding: 5em;
+  }
+  @include respond(laptop){
+    
+  }
+}
+
+.about-title h2 {
+  min-height: 120px;
+  font-family: $font-header;
+  text-align: left;
+}
+
+.skills {
+  height: auto;
+}
+
+.skills-title {
+  text-align: center;
+}
+
+.skills-list {
+  display: flex !important;
+  flex-flow: row wrap;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+
+  @include respond(tab-port) {
+    padding: 2em;
+    }
+}
+
+.skills-item {
+  scale: 0.6;
+
+  @include respond(laptop) {
+    scale: 1;
+    width: 20%;
+    padding: 25px 0px;
+  }
+}
+
+// .continue-anim { //TODO: Adjust layout 
+//   font-size: 50px;
+//   transform: rotate(90deg);
+//   width: 25px;
+//   margin-top: 25vh;
+//   margin-left: 50vw;
+//   letter-spacing: 10px;
+// }
+
+
+.work {
+  padding-top: 19vh;
+  padding-bottom: 10vh;
+  @include respond(laptop){
+    padding-top: 5vh;
+  }
+}
+
+.work-title h2 {
+  text-align: center;
+}
+
+#modal {
+  display: flex;
+  flex-flow: column wrap;
+
+  @include respond(tab-land) {
+    flex-flow: row wrap;
+  }
+}
+
+#modal aside {
+  border-bottom: 5px dotted $primary_dark;
+
+  @include respond(tab-port) {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    padding: 25px;
+  }
+  @include respond(tab-land) {
+    max-width: 45%;
+    border: none;
+  }
+}
+
+#modal aside:last-child {
+  @include respond(phone){
+    border: none;
+  }
+  @include respond(tab-port){
+    border: none;
+  }
+}
+
+.modal-title {
+  @include respond(tab-port){
+    width: 50%;
+    justify-items: center;
+  }
+}
+.modal-title h4 {
+  padding-left: 10px;
+}
+.modal-title img {
+  display: none;
+
+  @include respond(tab-port){
+    display: block;
+    width: 200px;
+    padding: 10px;
+  }
+}
+
+.modal-content {
+  padding: 0px 25px 10px 25px;
+  @include respond(tab-port){
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+    justify-content: space-between;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include respond(laptop){
+    margin-left: 10vw;
+  }
+}
+footer small {
+  font-family: $font-header;
+
+}
+footer a {
+  color: $primary_dark;
+  font-size: 0.8em;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 10px 5px;
+  margin: 0;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  @include respond(tab-land){
+    flex-direction: row;
+  }
+  @include respond(laptop) {
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+  }
+}
+.footer-nav li {
+  border: 1px solid $primary_cta;
+  border-radius: 15px;
+  margin: 10px 15px;
+  // height: 5rem;
+  text-align: center;
+}
+
+ul.footer-nav li.nav-item > a.nav-link > span.link-text {
+  display: block;
+  color: $primary_cta;
+  filter: grayscale(0%);
+}
+
+.credits {
+  text-align: center;
+  font-size: 0.6em;
+}
