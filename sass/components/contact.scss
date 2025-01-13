@@ -1,0 +1,333 @@
+@use '../partials/variables' as *;
+@use '../partials/mixins' as *;
+
+/* --------------- Popup Divs --------------- */
+
+// .swipe-item {
+//     transition: transform 0.5s ease-out;
+// }
+  
+i#close {
+    position: absolute;
+    right: 15px;
+    top: -65px;
+    cursor: pointer;
+    color: $primary_cta;
+    font-family: $font-header;
+    font-size: 4em;
+    z-index: 1005;
+
+    @include respond(tab-port){
+        font-size: 6em;
+        top: -100px;
+    }
+}
+
+#popupContact {
+    // display: none;
+}
+
+#popupBackground {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 19vh;
+    background-color: rgba($color: $primary_black, $alpha: 0.98);
+    z-index: 1001;
+    @include respond(laptop, desktop){
+        top: 0px;
+        left: 10%;
+    }
+}
+
+#popupModal {
+    position: fixed;
+    width: 80%;
+    top: 19vh;
+    bottom: 5%;
+    max-height: 75vh;
+    left: 7%;
+    padding: 10px;
+    font-family: $font-text;
+    border: 3px solid $primary_label;
+    background-color: rgba($primary_dark, 0.98);
+    border-radius: 15px;
+    z-index: 1002;
+
+    @include respond(tab-port){
+        width: 70%;
+        left: 13%;
+        font-size: 1.2em;
+    }
+    @include respond(tab-land){
+        width: 50%;
+        left: 25%;
+        font-size: 1em;
+    }
+    @include respond(laptop){
+        top: 15%;
+        padding: 20px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    @include respond(laptop){
+        margin-top: 20px;
+    }
+    @include respond(desktop){
+        margin-top: 50px;
+        font-size: 1.3em;
+    }
+}
+
+form p {
+    align-self: center;
+}
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    @include respond(laptop){
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0px 35px;
+    }
+}
+
+.contact-msg {
+    padding-top: 10px;
+    
+    @include respond(desktop){
+        padding-top: 30px;
+    }
+}
+.contact-msg label {
+    margin-left: 20px;
+}
+select, input, textarea {
+    width: 90%;
+    padding: 0px 10px;
+    align-self: center;
+    margin-bottom: 5px;
+}
+
+select, input {
+    height: 25px;
+}
+
+select {
+    width: 95%;
+    @include respond(laptop){
+       width: 44% !important;
+    }
+}
+
+label {
+    padding: 10px 5px;
+    font-size: 0.9em;
+}
+
+label, select, input {
+    @include respond(laptop){
+        width: 40%;
+    }
+}
+input[type=text] {
+    border: 2px solid $primary_dark;
+    font-size: 25px;
+}
+
+textarea {
+    height: 90px;
+    padding: 10px;
+    resize: none;
+    border: 2px solid $primary_dark;
+    font-size: 16px;
+    margin-bottom: 10px;
+    @include respond(tab-port){
+        left: 10px;
+        margin-left: 10px;
+        margin-right: 20px;
+        margin-bottom: 25px;
+        height: 110px;
+        padding-bottom: 0px;
+    }
+    @include respond(tab-land){
+        height: 50px;
+        margin-bottom: 0px;
+    }
+    @include respond(laptop){
+        margin-left: 25px;
+        height: 150px;
+    }
+    @include respond(desktop){
+        height: 175px;
+    }
+}
+.button-section{
+    margin-right: 10px;
+    margin-left: 10px;
+    @include respond(tab-port){
+        margin: 0px 10px;
+    }
+    @include respond(tab-land){
+        margin: 10px;
+    }
+}
+button {
+    text-decoration: none;
+    width: 100px;
+    height: 30x;
+    text-align: center;
+    display: block;
+    background: $primary_dark;
+    color: $primary_white;
+    border: 1px solid $primary_cta;
+    padding: 10px 0;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.8em;
+    @include respond(tab-port){
+        height: 70px;
+        width: 120px;
+        font-size: 1.3em;
+        border-radius: 10px;
+    }
+    @include respond(tab-land){
+        height: 50px;
+        font-size: 1.1em;
+    }
+    @include respond(desktop){
+        height: auto;
+        width: auto;
+        font-size: 1.1em;
+    }
+}
+
+// ------------------------------------------------------
+
+  // /* CONTACT */
+  // #popupContact{
+  //   width: 100vw;
+  //   height: 100vh;
+  //   opacity: 0.98;
+  //   top: 0;
+  //   left: 0;
+  //   // display: none;
+  //   position: fixed;
+  //   background-color: #3b3b3b;
+  //   overflow: auto;
+  //   z-index: 9999;
+  // }
+  // #contact_form {
+  //   max-width: 300px;
+  //   min-width: 250px;
+  //   padding: 10px 50px;
+  //   padding-bottom: 30px;
+  //   // border: 2px solid var(--mainGrey);
+  //   border-radius: 10px;
+  //   // background-color: var(--mainGrey);
+  // }
+  // #contact_form p {
+  //   margin-top: 30px;
+  // }
+  // #contact_form h2, #contact_form h3 {
+  //   // background-color: var(--primaryColor);
+  //   // color: var(--mainWhite);
+  //   padding: 20px 35px;
+  //   margin: -10px -50px;
+  //   text-align: center;
+  //   border-radius: 10px 10px 0 0;
+  // }
+  // #contact_form hr {
+  //   margin: 10px -50px;
+  //   border: 0;
+  //   // border-top: 1px solid var(--mainBrown);
+  // }
+  // #contact_form span {
+  //   color: red;
+  //   font-weight: 700;
+  // }
+  /* --------------- End of Popup Divs --------------- */
+
+// div#popupModal {
+//     width: 100vw;
+//     padding: 0;
+//     // margin-left: 10px;
+//     // margin-right: 10px;
+// }
+
+// form {
+// //     // max-width: 400px;
+//     display: flex;
+//     flex-direction: column;
+//     // font-size: 1.5em;
+//     font-family: $font-header;
+//     // margin: 0 auto;
+// }
+
+// label {
+//     display: block;
+// //     float: left;
+// //     clear: left;
+//     margin: 10px 0px 5px 0px !important;
+//     width: 300px;
+// }
+
+// input {
+//     width: 300px;
+//     margin: 5px 0px !important;
+//     padding-left: 0px !important;
+// }
+
+// // input, select, textarea {
+// //     display: block;
+// //     float: left;
+// //     margin: 5px auto;
+// //     width: 100%;
+// // }
+
+// // fieldset {
+// //     display: block;
+// //     // padding-left: 10px;
+// // }
+
+// // fieldset label, fieldset input {
+// //     // width: 75px;
+// // }
+
+// // legend {
+// //     // margin-left: 20px;
+// // }
+
+// textarea {
+//     margin-top: 5px;
+//     height:75px;
+//     min-width: 200px;
+//     align-items: center;
+//     color: gray;
+// }
+
+// // form > p {
+// //     clear: left;
+// //     text-align: center;
+// //     // padding: 5px auto;
+// // }
+
+// // input[type='submit'] {
+// //     background-color: rgb(255, 242, 0);
+// //     border-radius: 20px;
+// //     float: none;
+// //     display: inline;
+// //     font-size: 1em;
+// //     height: 25px;
+// //     width: 100px;
+// // }
+
+// // fieldset, div#message{
+// //     padding: 10px 0;
+// // }
