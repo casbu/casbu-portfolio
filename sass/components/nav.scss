@@ -1,0 +1,252 @@
+@use '../partials/variables' as *;
+@use '../partials/mixins' as *;
+
+/* --------------- Navbar ---------------- */
+.navbar {
+  top: 0;
+  width: 100vw;
+  position: fixed;
+  z-index: 1000;
+  background-color: $primary_black;
+
+  @include respond(laptop) {
+    width: 10%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+  }
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  transform: translateX(100%);
+
+  @include respond (tab-port){
+    padding-top: 10px;
+  }
+  @include respond(tab-land){
+    transform: translateX(0%);
+    padding: 30px 0px;
+  }
+  @include respond(laptop) {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    // margin-left: -100%;
+  }
+}
+
+.navbar-nav li{
+  opacity:0;
+
+  @include respond(tab-land) {
+    opacity: 1;
+  }
+  @include respond(laptop) {
+    opacity: 1;
+  }
+}
+
+.nav-item {
+  width: 100%;
+
+  @include respond(laptop) {
+    height: 100%;
+    padding: 25px 0px;
+  }
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  filter: grayscale(100%) opacity(0.7);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+}
+
+.nav-link object {
+  height: 2.5rem;
+  justify-content: center;
+  z-index: -1;
+  pointer-events: none;
+  // filter: brightness(0) saturate(100%) invert(46%) sepia(93%) saturate(344%) hue-rotate(47deg) brightness(94%) contrast(90%); // green
+  filter: brightness(0) saturate(100%) invert(22%) sepia(90%) saturate(7322%) hue-rotate(246deg) brightness(89%) contrast(101%); // blue
+  
+  @include respond(tab-port) {
+    height: 3.0rem;
+  }
+  @include respond(tab-land) {
+    height: 3.5rem;
+  }
+}
+
+.link-text {
+  display: none;
+}
+
+.nav-link,
+.nav-link:hover {
+  transition: $transition;
+}
+
+.nav-active {
+  transform: translateY(0%);
+}
+
+div.arrow{
+  top: 15vh;
+  display: block;
+  cursor: pointer;
+  text-align: center; 
+  width: 100%;
+  padding: 0;
+  background: $primary_black;
+
+  @include respond(tab-land) {
+    display: none;
+  }
+  @include respond(laptop) {
+    display: none;
+  }
+}
+
+// -------------------- ARROW
+
+#arrow-right {
+  width: 3rem;
+}
+#arrow-down {
+  width: 3rem;
+  transform: rotate(90deg);
+}
+#arrow-left {
+  width: 3rem;
+  transform: rotate(180deg);
+}
+#arrow-up {
+  width: 3rem;
+  transform: rotate(270deg);
+}
+
+.toggle #arrow-down{
+  transform: rotate(-90deg);
+  transition: $transition_slow;
+}
+
+.toggle #arrow-up {
+  transform: rotate(90deg);
+  transition: $transition_slow;
+}
+
+// -------------------- ANIMATION
+
+@keyframes navLinkRise{
+  from{
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to{
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+@keyframes navLinkFall{
+  from{
+      opacity: 1;
+      transform: translateY(0px);
+  }
+  to{
+      opacity: 0;
+      transform: translateY(50px);
+  }
+}
+
+/* --------------- Nav Links ---------------- */
+/*comment out visibility in ".nav-overlay" & transform in ".nav" to see nav before creating app.js */
+
+/* javascript classes */
+
+/* --------------- Nav Media Queries ---------------- */
+/* tablet screens */
+// @media only screen and (min-width: $width-medium){
+//   .navbar {
+//     width: 5rem;
+//     height: 100vh;
+//     position: fixed;
+//     transition: 200ms ease;
+//   }
+//   .navbar-nav {
+//     list-style: none;
+//     padding: 0;
+//     margin: 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     height: 100%;
+//   }
+
+//   // .navbar-nav li {
+//   //   opacity: 1;
+//   // }
+  
+//   .nav-item {
+//     width: 100%;
+//   }
+//   .nav-item:last-child {
+//     margin-top: auto;
+//   }
+//   .nav-link {
+//     display: flex;
+//     align-items: center;
+//     height: 5rem;
+//     color: $primary_dark;
+//     text-decoration: none;
+//     filter: grayscale(100%) opacity(0.7);
+//     transition: $transition;
+//   }
+  
+//   .nav-link:hover {
+//     filter: grayscale(0%) opacity(1);
+//     background: $nav_hover;
+//     color: $primary_dark;
+//   }
+//   .link-text {
+//     display: none;
+//     margin-left: 1rem;
+//     color: $primary_label;
+//   }
+  
+//   .nav-link object {
+//     min-width: 2rem;
+//     height: 1.5rem;
+//     margin: 0 1.5rem;
+//   }
+  
+//   .navbar:hover {
+//     width: 16rem;
+//   }
+//   .navbar:hover .link-text {
+//     display: block;
+//     min-width: 5rem;
+//   }
+//   .nav-link,
+//   .nav-link:hover {
+//     transition: $transition;
+//   }
+// }
+/* large screens */
+// @media only screen and (min-width: $width-large){
+//   // .navbar-nav{
+    
+//   // }
+// }
