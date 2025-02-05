@@ -10,21 +10,33 @@
 i#close {
     position: absolute;
     right: 15px;
-    top: -65px;
+    top: -55px;
     cursor: pointer;
     color: $primary_cta;
     font-family: $font-header;
-    font-size: 4em;
+    font-size: 6em;
     z-index: 1005;
 
     @include respond(tab-port){
         font-size: 6em;
-        top: -100px;
+        top: -65px;
+    }
+    @include respond(tab-land){
+        font-size: 7em;
+        top: -60px;
+    }
+    @include respond(laptop){
+        font-size: 8em;
+        top: -70px;
+    }
+    @include respond(desktop){
+        font-size: 7em;
+        top: -120px;
     }
 }
 
 #popupContact {
-    // display: none;
+    display: none;
 }
 
 #popupBackground {
@@ -35,7 +47,11 @@ i#close {
     top: 19vh;
     background-color: rgba($color: $primary_black, $alpha: 0.98);
     z-index: 1001;
-    @include respond(laptop, desktop){
+    @include respond(laptop){
+        top: 0px;
+        left: 10%;
+    }
+    @include respond(desktop){
         top: 0px;
         left: 10%;
     }
@@ -68,6 +84,11 @@ i#close {
     @include respond(laptop){
         top: 15%;
         padding: 20px;
+    }
+    @include respond(desktop){
+        top: 13%;
+        padding: 30px;
+        height: 75vh;
     }
 }
 
@@ -105,7 +126,9 @@ form p {
     }
 }
 .contact-msg label {
-    margin-left: 20px;
+    @include respond(laptop){
+        margin-left: 30px;
+    }
 }
 select, input, textarea {
     width: 90%;
@@ -116,6 +139,9 @@ select, input, textarea {
 
 select, input {
     height: 25px;
+    @include respond(desktop){
+        height: 50px;
+    }
 }
 
 select {
@@ -137,7 +163,7 @@ label, select, input {
 }
 input[type=text] {
     border: 2px solid $primary_dark;
-    font-size: 25px;
+    font-size: 0.9em;
 }
 
 textarea {
@@ -147,6 +173,7 @@ textarea {
     border: 2px solid $primary_dark;
     font-size: 16px;
     margin-bottom: 10px;
+    margin-left: 2%;
     @include respond(tab-port){
         left: 10px;
         margin-left: 10px;
@@ -202,8 +229,8 @@ button {
         font-size: 1.1em;
     }
     @include respond(desktop){
-        height: auto;
-        width: auto;
+        height: 65px;
+        width: 175px;
         font-size: 1.1em;
     }
 }
