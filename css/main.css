@@ -139,6 +139,17 @@ a {
   text-align: left;
 }
 
+.about-title aside {
+  width: 40%;
+  padding-left: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-left: 0.5rem;
+  float: right;
+  font-size: 1.2em;
+  color: #edd786;
+}
+
 .skills {
   height: auto;
 }
@@ -510,18 +521,40 @@ div.arrow {
 i#close {
   position: absolute;
   right: 15px;
-  top: -65px;
+  top: -55px;
   cursor: pointer;
   color: #E66567;
   font-family: "casbu", sans-serif;
-  font-size: 4em;
+  font-size: 6em;
   z-index: 1005;
 }
 @media (min-width: 768px) {
   i#close {
     font-size: 6em;
-    top: -100px;
+    top: -65px;
   }
+}
+@media (min-width: 1024px) {
+  i#close {
+    font-size: 7em;
+    top: -60px;
+  }
+}
+@media (min-width: 1440px) {
+  i#close {
+    font-size: 8em;
+    top: -70px;
+  }
+}
+@media (min-width: 1920px) {
+  i#close {
+    font-size: 7em;
+    top: -120px;
+  }
+}
+
+#popupContact {
+  display: none;
 }
 
 #popupBackground {
@@ -534,6 +567,12 @@ i#close {
   z-index: 1001;
 }
 @media (min-width: 1440px) {
+  #popupBackground {
+    top: 0px;
+    left: 10%;
+  }
+}
+@media (min-width: 1920px) {
   #popupBackground {
     top: 0px;
     left: 10%;
@@ -574,6 +613,13 @@ i#close {
     padding: 20px;
   }
 }
+@media (min-width: 1920px) {
+  #popupModal {
+    top: 13%;
+    padding: 30px;
+    height: 75vh;
+  }
+}
 
 form {
   display: flex;
@@ -582,6 +628,12 @@ form {
 @media (min-width: 1440px) {
   form {
     margin-top: 20px;
+  }
+}
+@media (min-width: 1920px) {
+  form {
+    margin-top: 50px;
+    font-size: 1.3em;
   }
 }
 
@@ -605,9 +657,16 @@ form p {
 .contact-msg {
   padding-top: 10px;
 }
+@media (min-width: 1920px) {
+  .contact-msg {
+    padding-top: 30px;
+  }
+}
 
-.contact-msg label {
-  margin-left: 20px;
+@media (min-width: 1440px) {
+  .contact-msg label {
+    margin-left: 30px;
+  }
 }
 
 select, input, textarea {
@@ -619,6 +678,11 @@ select, input, textarea {
 
 select, input {
   height: 25px;
+}
+@media (min-width: 1920px) {
+  select, input {
+    height: 50px;
+  }
 }
 
 select {
@@ -643,7 +707,7 @@ label {
 
 input[type=text] {
   border: 2px solid rgb(29, 30, 41);
-  font-size: 25px;
+  font-size: 0.9em;
 }
 
 textarea {
@@ -653,6 +717,7 @@ textarea {
   border: 2px solid rgb(29, 30, 41);
   font-size: 16px;
   margin-bottom: 10px;
+  margin-left: 2%;
 }
 @media (min-width: 768px) {
   textarea {
@@ -674,6 +739,11 @@ textarea {
   textarea {
     margin-left: 25px;
     height: 150px;
+  }
+}
+@media (min-width: 1920px) {
+  textarea {
+    height: 175px;
   }
 }
 
@@ -718,6 +788,13 @@ button {
 @media (min-width: 1024px) {
   button {
     height: 50px;
+    font-size: 1.1em;
+  }
+}
+@media (min-width: 1920px) {
+  button {
+    height: 65px;
+    width: 175px;
     font-size: 1.1em;
   }
 }

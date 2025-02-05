@@ -23,7 +23,7 @@ const arrowAnimation = () => {
 };
 
 //about text cycling
-const aboutList = [ "a Front-End Engineer", "a Project Manager", "an IT Administrator", "a Photographer", "a Creator"];
+const aboutList = [ "a Full-Stack Engineer", "a Product Designer", "a Project Manager", "an IT Administrator", "a Photographer", "a Creator"];
 const  cycle = document.querySelector("#about-cycle");
 let i = 0;
 const cycleAbout = () => {

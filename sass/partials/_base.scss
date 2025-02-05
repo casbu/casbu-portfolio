@@ -156,6 +156,18 @@ a{
   text-align: left;
 }
 
+.about-title aside {
+  width: 40%;
+  padding-left: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-left: 0.5rem;
+  float: right;
+  // font-weight: bold;
+  font-size: 1.2em;
+  color: $primary_quote;
+}
+
 .skills {
   height: auto;
 }
